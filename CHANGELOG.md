@@ -4,6 +4,25 @@ All notable changes to `tilttek/generator` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## 0.2.3-alpha - 2026-11-24
+
+### Changed
+
+- The tests count the work of the costliest draw in readings of a clock that moves forward at each reading, rather
+  than on the wall clock: a busy machine no longer fails the load test, and a draw that renders without reading the
+  clock still does.
+- `tilttek/dice` 0.3 required: 0.2 is no longer accepted.
+
+### Fixed
+
+- The documentation in French: its links to the section on where the text comes from reach that section.
+
+### Security
+
+- `twig/twig` 3.31 or later required, for the fixes of its sandbox in 3.29: a template naming another one with `use`
+  is refused before that template is loaded. The templates render in a `Twig\Sandbox\Sandbox`, in a Twig environment
+  of their own, under the same strict policy.
+
 ## 0.2.2-alpha - 2026-11-20
 
 ### Changed
